@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 
 const Form = () => {
   const [name1, setName1] = useState("");
@@ -71,22 +71,24 @@ const Form = () => {
         type="text"
         id="name1"
         value={name1}
-        onChange={handleName1Change} 
+        onChange={handleName1Change}
+        data-testid="input1"
       /> 
       <label htmlFor="name2">Name 2:</label>
       <input
         type="text"
         id="name2"
         value={name2}
-        onChange={handleName2Change} 
+        onChange={handleName2Change}
+        data-testid="input2"
       /> 
-      <button onClick={calculateRelationship}  >
+      <button onClick={calculateRelationship} data-testid="calculate_relationship">
         Calculate Relationship
       </button>
-      <button onClick={clearForm}>
+      <button onClick={clearForm} data-testid="clear">
         Clear
       </button>
-      {result && <h3>{result}</h3>}
+      {result && <h3 data-testid="answer">{result}</h3>}
     </div>
   );
 };
